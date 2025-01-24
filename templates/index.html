@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Stresslabben</title>
+</head>
+<body>
+    <div class="content" id="hele">
+        <div class="spørreskjema domain" id="måleverktøy">
+            <div class="domain" id="domain2">
+                <h1>GAD-7 Generalisert angstlidelse</h1>
+                <p>GAD-7 er en del av Patient Health Questionnaire (PHQ; Spitzer, Kroenke & Williams, 1999), består av syv ledd og måler sentrale symptomer på angst. Spørreskjemaet brukes både i klinisk praksis og i forskning.</p>
+                
+                <form action="{{ url_for('submit') }}" method="post">
+                    <p>Hvor ofte har du vært plaget av de følgende problemene i løpet av de siste to ukene:</p>
+                    <table>
+                        <tr>
+                            <th>Problem</th>
+                            <th>0 Ikke i det hele tatt</th>
+                            <th>1 Noen dager</th>
+                            <th>2 Mer enn halvparten av dagene</th>
+                            <th>3 Nesten hver dag</th>
+                        </tr>
+                        <tr>
+                            <td class="question">1. Følt deg nervøs, engstelig eller på tuppa</td>
+                            <td><input type="radio" name="q1" value="0"></td>
+                            <td><input type="radio" name="q1" value="1"></td>
+                            <td><input type="radio" name="q1" value="2"></td>
+                            <td><input type="radio" name="q1" value="3"></td>
+                        </tr>
+                        <tr>
+                            <td class="question">2. Ikke klart å stoppe eller kontrollere bekymringene dine</td>
+                            <td><input type="radio" name="q2" value="0"></td>
+                            <td><input type="radio" name="q2" value="1"></td>
+                            <td><input type="radio" name="q2" value="2"></td>
+                            <td><input type="radio" name="q2" value="3"></td>
+                        </tr>
+                        <tr>
+                            <td class="question">3. Bekymret deg for mye om ulike ting</td>
+                            <td><input type="radio" name="q3" value="0"></td>
+                            <td><input type="radio" name="q3" value="1"></td>
+                            <td><input type="radio" name="q3" value="2"></td>
+                            <td><input type="radio" name="q3" value="3"></td>
+                        </tr>
+                        <tr>
+                            <td class="question">4. Hatt vansker med å slappe av</td>
+                            <td><input type="radio" name="q4" value="0"></td>
+                            <td><input type="radio" name="q4" value="1"></td>
+                            <td><input type="radio" name="q4" value="2"></td>
+                            <td><input type="radio" name="q4" value="3"></td>
+                        </tr>
+                        <tr>
+                            <td class="question">5. Vært så rastløs at det har vært vanskelig å sitte stille</td>
+                            <td><input type="radio" name="q5" value="0"></td>
+                            <td><input type="radio" name="q5" value="1"></td>
+                            <td><input type="radio" name="q5" value="2"></td>
+                            <td><input type="radio" name="q5" value="3"></td>
+                        </tr>
+                        <tr>
+                            <td class="question">6. Blitt lett irritert eller ergret deg over ting</td>
+                            <td><input type="radio" name="q6" value="0"></td>
+                            <td><input type="radio" name="q6" value="1"></td>
+                            <td><input type="radio" name="q6" value="2"></td>
+                            <td><input type="radio" name="q6" value="3"></td>
+                        </tr>
+                        <tr>
+                            <td class="question">7. Følt deg redd som om noe forferdelig kunne komme til å skje</td>
+                            <td><input type="radio" name="q7" value="0"></td>
+                            <td><input type="radio" name="q7" value="1"></td>
+                            <td><input type="radio" name="q7" value="2"></td>
+                            <td><input type="radio" name="q7" value="3"></td>
+                        </tr>
+                    </table>
+                    <p>Hvis du har opplevd ett eller flere av de problemene som nevnes, i hvor stor grad har problemene gjort det vanskelig for deg å utføre arbeidet ditt, ordne med ting hjemme eller å komme overens med andre?</p>
+                    <p>
+                        <input type="radio" name="difficulty" value="0"> Ikke vanskelig i det hele tatt<br>
+                        <input type="radio" name="difficulty" value="1"> Litt vanskelig<br>
+                        <input type="radio" name="difficulty" value="2"> Svært vanskelig<br>
+                        <input type="radio" name="difficulty" value="3"> Ekstremt vanskelig
+                    </p>
+                    <p>Kilde: Spitzer RL, Kroenke K, Williams JBW, Lowe B. A brief measure for assessing generalized anxiety disorder. Arch Inern Med. 2006; 166: 1092-1097. Oversatt til norsk av Sverre Urnes Johnson, Asle Hoffart, Pål Ulvenes, Harold Sexton & Bruce E. Wampold.</p>
+                    <button class="btn" type="submit">Resultater</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

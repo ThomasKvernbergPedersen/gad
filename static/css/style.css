@@ -1,0 +1,190 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e3e8e9;
+    margin: 0;
+    padding: 0;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+th {
+  background-color: #f2f2f2;
+}
+.question {
+  font-weight: bold;
+}
+
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+
+
+h1, h2, h3, h4 {
+    color: #333;
+    font-family: 'Arial', sans-serif; /* Velg en klar og lettleselig skrifttype */
+    margin-bottom: 10px; /* Legg til plass under overskrifter */
+    margin-left: 10px;
+  } 
+
+  
+  p, li {
+    line-height: 1.6;
+    color: #555;
+    font-family: 'Arial', sans-serif; /* Samme skrifttype for konsistens */
+    margin-bottom: 15px; /* Legg til plass under avsnitt og listeelementer */
+  }
+  
+  ul {
+    list-style-type: disc;
+    margin-left: 20px; /* Indent for listeelementer */
+  }
+  
+  .highlight {
+    background-color: #e0f7fa; /* Lys bakgrunnsfarge for å fremheve viktig tekst */
+    padding: 5px;
+    border-radius: 5px; /* Runde kanter for fremhevet tekst */
+  }
+
+
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0; /* Plass over og under linje */
+  }
+
+
+  /* KNAPP*/
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .btn:active {
+    background-color: #79797a;
+    transform: scale(1);
+  }
+  
+  .btn-dark {
+    background-color: #3d6ca1;
+  }
+  
+  .btn-dark:hover {
+    background-color: #23272b;
+  }
+  
+  .btn-dark:active {
+    background-color: #1d2124;
+  }
+
+  /*Underoverskrift*/
+  
+  
+.subheading {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Plassering av tooltip */
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.spørsmål {
+color: #1d2124;
+}
+
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="number"]:focus {
+  border-color: #66afe9;
+  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+  outline: none;
+}
