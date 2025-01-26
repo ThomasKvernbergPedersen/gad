@@ -17,9 +17,16 @@
                     <p>Poeng: {{ sum_skåre }}</p>
                    <p>Resultat: {{ Kategori }}</p>
                    <p>Hvor vanskelig er disse symptomene for deg i din hverdag: {{ Livsbelastning }}</p>
-                   <h2>Visualisering</h2>
-                   <iframe src="{{ url_for('static', filename='gad7_visualization.html') }}" width="100%" height="500px"></iframe>
-                
+                   <h1>Visualisering</h1>
+                   <p>Hvor vanskelig er disse symptomene for deg i din hverdag:</p>
+                   
+                   <div id="anxiety_chart">
+                       {{ anxiety_chart | safe }}
+                   </div>
+                   
+                   <div id="bar_chart">
+                       {{ bar_chart | safe }}
+                   </div>
                 <p>Kilde for grenseverdier Spitzer et al. (2006)</p>
 
 
