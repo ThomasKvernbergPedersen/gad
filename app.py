@@ -6,11 +6,11 @@ app = Flask(__name__)
 
 def categorize_anxiety(sum_skåre):
     if 5 <= sum_skåre <= 9:
-        return "Mild angst"
+        return "Mild angst: Dette innebærer symptomer som er merkbare, men som ikke nødvendigvis forstyrrer daglige aktiviteter i stor grad. Du kan føle deg engstelig eller bekymret, men klarer fortsatt å håndtere jobb, skole og sosiale aktiviteter."
     elif 10 <= sum_skåre <= 14:
-        return "Moderat angst"
+        return "Moderat angst: Symptomene er mer intense og kan begynne å påvirke din evne til å fungere normalt. Du kan oppleve vedvarende bekymringer, rastløshet, og fysiske symptomer som hjertebank og svette. Dette kan føre til at du unngår visse situasjoner eller oppgaver"
     elif 15 <= sum_skåre <= 21:
-        return "Alvorlig angst"
+        return "Alvorlig angst: Symptomene er svært intense og kan være invalidiserende. Du kan oppleve panikkanfall, fysiske symptomer som pustevansker og brystsmerter, og en sterk følelse av frykt eller katastrofetanker. Dette kan gjøre det vanskelig å utføre daglige aktiviteter og opprettholde sosiale relasjoner"
     else:
         return "Normal angst"
     
@@ -55,18 +55,18 @@ def create_bar_chart(data):
     
     fig = px.bar(data_list, x='Domain', y='Score', title='Total Score per Domain')
     new_x_labels = [
-        'Suitable Items', 'Feasible Agenda', 'Coherent and dynamic formulation', 'Appropriate Intervention Targets', 
-        'Choosing Suitable Interventions', 'Rationale for Interventions', 'Implementing Interventions', 
-        'Reviewing Interventions', 'Reviewing Homework', 'Choosing Suitable Homework', 'Rationale for Homework', 
-        'Planning Homework', 'Choosing Suitable Measures', 'Implementing Measures', 'Pace', 'Time Management', 
-        'Maintained Focus', 'Interpersonal style', 'Empathic Understanding', 'Collaboration', 'Patient Feedback', 
-        'Reflective Summaries'
+        "Nervøs, engstelig",
+        "Tankekjør bekymringer",
+        "Mengde bekymringer",
+        "Vansker med å slappe av",
+        "Rastløs",
+        "Irritasjon",
+        "Frykt"
     ]
 
     fig.update_traces(
-        marker_color=['#A2D2DF', '#A2D2DF', '#4A628A', '#9B7EBD', '#9B7EBD','#9B7EBD','#9B7EBD','#9B7EBD', '#E6C767', 
-                      '#E6C767','#E6C767','#E6C767','#898121','#898121', '#F87A53','#F87A53','#F87A53','#0D92F4','#0D92F4',
-                      '#0D92F4', '#54473F','#54473F'],  # Endre fargen på stolpene
+        marker_color=['#A2D2DF', '#4A628A', '#4A628A', '#9B7EBD', '#9B7EBD', '#E6C767', 
+                      '#E6C767'],  # Endre fargen på stolpene
         texttemplate='%{x}: %{y}',  # Legg til tekst på stolpene
         textposition='outside'  # Plasser teksten utenfor stolpene
     )
@@ -115,7 +115,7 @@ def submit():
         if key.startswith('q'):
             data[key] = float(value)  # Konverter til float hvis verdien finnes
 
-    bar_chart = create_bar_chart(data)
+    bar_chart = create_bar_chart(data)  if difficulty != "0" else None
 
     return render_template('resultat.html', q1=q1, q2=q2, q3=q3, q4=q4, q5=q5, q6=q6, q7=q7, difficulty=difficulty, 
                            sum_skåre=sum_skåre, Kategori=Kategori, Livsbelastning=Livsbelastning, 

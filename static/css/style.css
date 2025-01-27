@@ -10,11 +10,6 @@ body {
 
 }
 
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
 th, td {
   border: 1px solid #ddd;
   padding: 8px;
@@ -170,21 +165,43 @@ color: #1d2124;
 }
 
 
-input[type="number"] {
+/* Styling for the table */
+table {
   width: 100%;
-  padding: 10px;
-  margin: 10px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  border-collapse: collapse;
+  margin: 30px 0;
+  font-size: 18px;
+  text-align: left;
 }
 
-input[type="number"]:focus {
-  border-color: #66afe9;
-  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
-  outline: none;
+table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+table th, table td {
+  padding: 12px 15px;
+  border: 5px solid #dddddd;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+/* Styling for checkboxes */
+input[type="radio"] {
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+  transform: scale(1.5); /* Skalér opp avkryssningsboksene */
 }
