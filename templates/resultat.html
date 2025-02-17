@@ -11,20 +11,31 @@
         <div class="spørreskjema domain" id="måleverktøy">
             <div class="domain" id="">
                 <h1>Resultater</h1>
-                <p>Takk for at du fullførte GAD-7 skjemaet. Her er dine resultater:</p>
+                <p>Takk for at du fullførte GAD-7 skjemaet. Husk at dette skjemaet kun kan gi en indikator på symptomer og ingen diagnoser. Snakk med din fastlege eller helsepersonell hvis du er i tvil.
+                    <br> Her er dine resultater:</p>
 
                 
-                    <p>Poeng: {{ sum_skåre }}</p>
-                   <p>Resultat: {{ Kategori }}</p>
-                   <p>Hvor vanskelig er disse symptomene for deg i din hverdag: {{ Livsbelastning }}</p>
+                    <div class="skåre content">
+                        <p>Skåre: {{ sum_skåre }}</p>
+                    </div>
+                    <div>
+                        <p>Betydning: {{ Kategori }}</p>
+                        <p>Kilde for grenseverdier Spitzer et al. (2006)</p>
+
+                    </div>
+                   
+                   <div>
+                    <p>Hvor vanskelig er disse symptomene for deg i din hverdag: {{ Livsbelastning }}</p></div>
+                    <a href="https://nhi.no/psykisk-helse/psykisk-egenpleie/selvhjelpskurs-for-psykiske-lidelser">Hvis du ønsker å lære mer, eller arbeide med egen angst er ikke dette farlig å gjøre på egen hånd. Sjekk ut noen av kursene fra NHI</a>
+                   
                    <h1>Visualisering</h1>
-                   <p>Hvor vanskelig er disse symptomene for deg i din hverdag:</p>
+                   <p>:</p>
                    
                    
                    <div id="bar_chart">
                        {{ bar_chart | safe }}
                    </div>
-                <p>Kilde for grenseverdier Spitzer et al. (2006)</p>
+               
 
 
                 <a href="{{ url_for('index') }}">Tilbake til skjemaet</a>

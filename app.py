@@ -6,13 +6,13 @@ app = Flask(__name__)
 
 def categorize_anxiety(sum_skåre):
     if 5 <= sum_skåre <= 9:
-        return "Mild angst: Dette innebærer symptomer som er merkbare, men som ikke nødvendigvis forstyrrer daglige aktiviteter i stor grad. Du kan føle deg engstelig eller bekymret, men klarer fortsatt å håndtere jobb, skole og sosiale aktiviteter."
+        return "Mild angst: Dette innebærer symptomer som er merkbare, men som ikke nødvendigvis forstyrrer daglige aktiviteter i stor grad. Du kan føle deg engstelig eller bekymret, men klarer fortsatt å håndtere jobb, skole og sosiale aktiviteter. For mer overskudd og ro i hverdagen finnes det grep du kan gjøre. Se linken for selvhjelpskurs eller se etter tilbud i din kommune for psykisk helsetilbud. Forskning viser at kognitiv eller metakognitiv adferdsterapi er den desidert mest effektive metoden mot angst. Ett gratis lavterskel behandlingstilbud som dette er Rask psykisk helsehjelp. "
     elif 10 <= sum_skåre <= 14:
-        return "Moderat angst: Symptomene er mer intense og kan begynne å påvirke din evne til å fungere normalt. Du kan oppleve vedvarende bekymringer, rastløshet, og fysiske symptomer som hjertebank og svette. Dette kan føre til at du unngår visse situasjoner eller oppgaver"
+        return "Moderat angst: Symptomene er mer intense og kan begynne å påvirke din evne til å fungere normalt. Du kan oppleve vedvarende bekymringer, rastløshet, og fysiske symptomer som hjertebank og svette. Dette kan føre til at du unngår visse situasjoner eller oppgaver. Effektiv behandling finnes. Dette kan være er krevende, men ikke farlig å gjøre på egenhånd. Med moderat angst kan det likevel være greit å få støtte fra helsepersonell. Se etter tilbud i din kommune som Rask psykisk helsehjelp eller andre tilbud. Forskning viser at kognitiv adferdsterapi eller metakognitiv terapi er de mest effektive metodene mot spesifikk angst eller bekymringsangst. Konsulter også din fastlege hvis du er i tvil."
     elif 15 <= sum_skåre <= 21:
-        return "Alvorlig angst: Symptomene er svært intense og kan være invalidiserende. Du kan oppleve panikkanfall, fysiske symptomer som pustevansker og brystsmerter, og en sterk følelse av frykt eller katastrofetanker. Dette kan gjøre det vanskelig å utføre daglige aktiviteter og opprettholde sosiale relasjoner"
+        return "Alvorlig angst: Symptomene er svært intense og kan være invalidiserende. Du kan oppleve panikkanfall, fysiske symptomer som pustevansker og brystsmerter, og en sterk følelse av frykt eller katastrofetanker. Dette kan gjøre det vanskelig å utføre daglige aktiviteter og opprettholde sosiale relasjoner. Effektiv behandling finnes. Dette kan være er krevende, men ikke farlig å gjøre på egenhånd. Med alvorlig angst kan det likevel være greit å få støtte fra helsepersonell. Ta kontakt med fastlegen for henvisning til behandling og vis skåren din."
     else:
-        return "Normal angst"
+        return "Normale angstreaksjoner som kan gi informasjon om fare eller prioriteringer. Uten at dette påvirker livskvalitet i større grad."
     
 def livsbelastning(difficulty):
     if difficulty == "0":
@@ -104,7 +104,7 @@ def submit():
     sum_skåre = q1 + q2 + q3 + q4 + q5 + q6 + q7 
     skåre_visualisering = [q1, q2, q3, q4, q5, q6, q7]
 
-    Kategori = categorize_anxiety(sum_skåre)
+    Kategori = categorize_anxiety(sum_skåre)  if difficulty != "0" else "Du har svart at disse symptomene ikke er vanskelig for deg i din hverdag"
     Livsbelastning = livsbelastning(difficulty)
 
     anxiety_chart = create_visualization(skåre_visualisering)
