@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import plotly.graph_objects as go
 import plotly.express as px
-
+import pandas
 app = Flask(__name__)
 
 def categorize_anxiety(sum_skåre):
